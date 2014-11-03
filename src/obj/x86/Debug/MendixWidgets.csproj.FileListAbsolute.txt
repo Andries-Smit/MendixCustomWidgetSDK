@@ -1,0 +1,55 @@
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.pdb
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Main.resources
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Properties.Resources.resources
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.exe
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.pdb
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe.config
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csprojResolveAssemblyReference.cache
+C:\Users\red\OneDrive @ Mendix Technology B.V-\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWidget.resources
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe.config
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.exe
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.pdb
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csprojResolveAssemblyReference.cache
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWidget.resources
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Main.resources
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Properties.Resources.resources
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.pdb
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\red\Documents\work\MendixWidgets\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmSplash.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe.config
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.exe
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.pdb
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmSplash.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWidget.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Main.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Properties.Resources.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.pdb
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmQRBarcode.resources
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\Gma.QrCodeNet.Encoding.Net45.dll
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\Gma.QrCodeNet.Encoding.Net45.pdb
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\bin\Debug\Gma.QrCodeNet.Encoding.Net45.xml
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmLogin.resources
+C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe.config
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.exe
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.pdb
+C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.exe
+C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\Gma.QrCodeNet.Encoding.Net45.pdb
+C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\Gma.QrCodeNet.Encoding.Net45.xml
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csprojResolveAssemblyReference.cache
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmLogin.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmQRBarcode.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmSplash.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWidget.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Main.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Properties.Resources.resources
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache
+C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.pdb
+C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWebwindow.resources
