@@ -53,3 +53,17 @@ C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.Properties.R
 C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache
 C:\Projects\MendixWidgets\MendixWidgets\bin\Debug\MendixWidgets.pdb
 C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Debug\MendixWidgets.FrmWebwindow.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Debug\MendixWidgets.exe.config
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.exe
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.pdb
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Debug\file.ico
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Debug\MendixWidgets.exe
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Debug\MendixWidgets.pdb
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.csprojResolveAssemblyReference.cache
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.FrmLogin.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.FrmSplash.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.FrmWebwindow.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.FrmWidget.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.Main.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.Properties.Resources.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Debug\MendixWidgets.csproj.GenerateResource.Cache

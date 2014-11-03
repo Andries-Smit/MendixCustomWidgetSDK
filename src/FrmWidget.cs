@@ -161,15 +161,20 @@ namespace MendixWidgets
             {
                 if (!isDirectoryIgnored(dirInfo.FullName))
                 {
-                    FileInfo[] files = new DirectoryInfo(this.txtDestination.Text + "\\deployment\\web\\widgets\\" + dirInfo.Name + "\\widget\\").GetFiles();
-
-                    foreach (FileInfo fi in files)
+                    if (Directory.Exists(this.txtDestination.Text + "\\deployment\\web\\widgets\\" + dirInfo.Name + "\\widget\\"))
                     {
-                        if (fi.FullName.Contains(".js") && !isFileIgnored(fi.FullName))
+
+                        FileInfo[] files = new DirectoryInfo(this.txtDestination.Text + "\\deployment\\web\\widgets\\" + dirInfo.Name + "\\widget\\").GetFiles();
+
+                        foreach (FileInfo fi in files)
                         {
-                            js += "dojo.registerModulePath(\"" + dirInfo.Name + "\", \"../../widgets/" + dirInfo.Name + "\");\r\n";
-                            js += File.ReadAllText(fi.FullName).Replace("\n", "\r\n").Replace("\r\r\n", "\r\n");
+                            if (fi.FullName.Contains(".js") && !isFileIgnored(fi.FullName))
+                            {
+                                js += "dojo.registerModulePath(\"" + dirInfo.Name + "\", \"../../widgets/" + dirInfo.Name + "\");\r\n";
+                                js += File.ReadAllText(fi.FullName).Replace("\n", "\r\n").Replace("\r\r\n", "\r\n");
+                            }
                         }
+
                     }
 
                     this.txtWidgetJS.Text = js;
