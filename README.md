@@ -1,14 +1,17 @@
-# App Store Widget Boilerplate
+# Mendix Custom Widget SDK
 
-This boilerplate gives you all you need to start a new custom widget for Mendix 5.
+The Mendix Custom Widget SDK helps you in building your custom widgets.
+This first version of the SDK helps automating the packaging of your custom widgets into MPK files.
+It is depended upon 7-zip (32bit version). And you should have installed this on your local device.
 
-The boilerplate contains:
+There are two advantages in using this program.
 
-- Directory structure.
-- Readme.md file.
-- License.
-- Javascript source.
-- XSD for package.xml, to configure properties of the widget, visible inside de Mendix business modeler.
+- First you can create an MPK with just a click on a button.
+- Secondly this program can instantly place the files you are editing in your favorite IDE into the deployment directory where the widgets are located.
+
+This will save allot of time while you are developing.
+This is public BETA and personal project of mine.
+Feel free to join in and help make this application better.
 
 ## Contributing
 
@@ -16,18 +19,4 @@ For more information on contributing to this repository visit [Contributing to a
 
 ## Typical usage scenario
 
-Use this template to start building a widget for Mendix 5.
-Alter this README.md file and describe what your widget does.
- 
-## Description
-
-The javascript inside the widget has examples of:
-
-- Using CSS within a Widget.
-- Using templating.
-- Loading external library's.
-- DOM manipulation.
-- Event attaching.
-- Loading data.
-- Executing microflow and sending data.
-- Working with the context object (The object that is send by a contextview , for instance a dataview).
+Use this SDK to start building a custom widget for Mendix 5.
