@@ -2,7 +2,8 @@
 
 The Mendix Custom Widget SDK helps you in building your custom widgets.
 This first version of the SDK helps automating the packaging of your custom widgets into MPK files.
-It is depended upon 7-zip (32bit version). And you should have installed this on your local device.
+It is depended upon 7-zip (32bit version). 
+7-Zip and the .NET framework 4.5.2 are now automatically installed by the setup.
 
 There are two advantages in using this program.
 
