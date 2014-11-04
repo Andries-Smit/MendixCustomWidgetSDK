@@ -34,7 +34,6 @@ WizardSmallImageFile=widget_setup_right_top.bmp
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -45,7 +44,8 @@ Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\file.ico"; Des
 Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\MendixWidgets.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Dependencies\dotnet452.exe"; AfterInstall: InstallFramework; DestDir: {tmp}; Flags: deleteafterinstall; Check: FrameworkIsNotInstalled
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Dependencies\dotnet452.exe"; AfterInstall: InstallFramework; DestDir: {tmp}; Flags: deleteafterinstall; Check: FrameworkIsNotInstalled    
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Dependencies\7z920.exe"; AfterInstall: InstallSevenZip; DestDir: {tmp}; Flags: deleteafterinstall; Check: SevenZipIsNotInstalled
 
 [Code]
 procedure InstallFramework;
@@ -69,10 +69,35 @@ begin
   end;
 end;
 
-[Code]
 function FrameworkIsNotInstalled: Boolean;
 begin
     Result := not RegKeyExists(HKEY_LOCAL_MACHINE, 'Software\Microsoft\.NETFramework\policy\v4.0');
+end;
+
+procedure InstallSevenZip;
+var
+  ResultCode: Integer;  
+  StatusText: string;
+begin
+  StatusText := WizardForm.StatusLabel.Caption;
+  WizardForm.StatusLabel.Caption := 'Installing 7-Zip...';
+  WizardForm.ProgressGauge.Style := npbstMarquee;
+  try
+    if not Exec(ExpandConstant('{tmp}\7z920.exe'), '/S', '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then
+    begin
+      // you can interact with the user that the installation failed
+      MsgBox('7-Zip installation failed with code: ' + IntToStr(ResultCode) + '.',
+        mbError, MB_OK);
+    end;
+  finally
+    WizardForm.StatusLabel.Caption := StatusText;
+    WizardForm.ProgressGauge.Style := npbstNormal;
+  end;
+end;
+
+function SevenZipIsNotInstalled: Boolean;
+begin
+    Result := not RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\7-Zip');
 end;
 
 [Icons]
