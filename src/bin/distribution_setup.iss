@@ -23,10 +23,10 @@ DefaultDirName={pf}\{#MyAppName}
 DisableDirPage=yes
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\Projects\MendixWidgets\MendixWidgets\LICENSE.txt
-OutputDir=C:\Projects\MendixWidgets\MendixWidgets\bin\Dist
+LicenseFile=C:\Projects\GitHub\MendixCustomWidgetSDK\src\LICENSE.txt
+OutputDir=C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Dist
 OutputBaseFilename=setup
-SetupIconFile=C:\Projects\MendixWidgets\MendixWidgets\app2.ico
+SetupIconFile=C:\Projects\GitHub\MendixCustomWidgetSDK\src\app2.ico
 Compression=lzma
 SolidCompression=yes
 WizardImageFile=widget_setup_left.bmp
@@ -41,10 +41,39 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]          
-Source: "C:\Projects\MendixWidgets\MendixWidgets\bin\Release\file.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Projects\MendixWidgets\MendixWidgets\bin\Release\MendixWidgets.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Projects\MendixWidgets\MendixWidgets\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\file.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\MendixWidgets.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Dependencies\dotnet452.exe"; AfterInstall: InstallFramework; DestDir: {tmp}; Flags: deleteafterinstall; Check: FrameworkIsNotInstalled
+
+[Code]
+procedure InstallFramework;
+var
+  ResultCode: Integer;  
+  StatusText: string;
+begin
+  StatusText := WizardForm.StatusLabel.Caption;
+  WizardForm.StatusLabel.Caption := 'Installing .NET framework...';
+  WizardForm.ProgressGauge.Style := npbstMarquee;
+  try
+    if not Exec(ExpandConstant('{tmp}\dotnet452.exe'), '/q /noreboot', '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then
+    begin
+      // you can interact with the user that the installation failed
+      MsgBox('.NET installation failed with code: ' + IntToStr(ResultCode) + '.',
+        mbError, MB_OK);
+    end;
+  finally
+    WizardForm.StatusLabel.Caption := StatusText;
+    WizardForm.ProgressGauge.Style := npbstNormal;
+  end;
+end;
+
+[Code]
+function FrameworkIsNotInstalled: Boolean;
+begin
+    Result := not RegKeyExists(HKEY_LOCAL_MACHINE, 'Software\Microsoft\.NETFramework\policy\v4.0');
+end;
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

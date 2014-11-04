@@ -11,3 +11,16 @@ C:\Projects\MendixWidgets\MendixWidgets\bin\Release\MendixWidgets.pdb
 C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Release\MendixWidgets.exe
 C:\Projects\MendixWidgets\MendixWidgets\obj\x86\Release\MendixWidgets.pdb
 C:\Projects\MendixWidgets\MendixWidgets\bin\Release\file.ico
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\MendixWidgets.exe.config
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.exe
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.pdb
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\file.ico
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\MendixWidgets.exe
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\bin\Release\MendixWidgets.pdb
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmLogin.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmSplash.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmWebwindow.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmWidget.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.Main.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.Properties.Resources.resources
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.csproj.GenerateResource.Cache
