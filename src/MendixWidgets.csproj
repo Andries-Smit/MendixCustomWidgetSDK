@@ -59,6 +59,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMendixWidgetSDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMendixWidgetSDK.Designer.cs">
+      <DependentUpon>FrmMendixWidgetSDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMendixWidgetSDK.resx">
+      <DependentUpon>FrmMendixWidgetSDK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSplash.resx">
       <DependentUpon>FrmSplash.cs</DependentUpon>
@@ -154,8 +163,15 @@
     <Content Include="file.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="icons\btnCreateWidget.png" />
+    <Content Include="icons\new.bmp" />
+    <Content Include="icons\new.png" />
+    <Content Include="icons\open.png" />
+    <Content Include="icons\save.png" />
+    <Content Include="icons\saveas.png" />
     <Content Include="LICENSE.txt" />
     <Content Include="splash.png" />
+    <None Include="widget.png" />
     <Content Include="www\index.html" />
     <Content Include="www\js\jquery-1.11.1.min.js" />
   </ItemGroup>

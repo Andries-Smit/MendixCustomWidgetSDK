@@ -4,27 +4,177 @@
 <head>
     <meta charset="utf-8" />
     <title>Mendix SDK</title>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
     <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
         body{
-            font-family: 'Open Sans', 'Helvetica';
+            font-family: 'Arial', 'Helvetica';
+            cursor: default;
+        }
+        .options{
+            width: 1008px;
+        }
+        .options td {
+            vertical-align: middle;
+            text-align:center;
+            width: 33%;
+        }
+        .heightLarge{
+            height: 350px;
+            vertical-align: bottom !important;
+            text-align:center;
+            padding-bottom: 25px;
+        }
+        .heightSmall {
+            height: 50px;
+        }
+        .openWidget{
+            background-image: url('./img/open_widget.png');
+            background-repeat: no-repeat;
+            width: 169px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .createWidget{
+            background-image: url('./img/create_widget.png');
+            background-repeat: no-repeat;
+            width: 169px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .manageWidget{
+            background-image: url('./img/manage_widget.png');
+            background-repeat: no-repeat;
+            width: 169px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .createWidgetIcon{
+            background-image: url('./img/create_widget_icon.png');
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+        .openWidgetIcon{
+             background-image: url('./img/open_widget_icon.png');
+             background-repeat: no-repeat;
+             width: 200px;
+             height: 200px;
+             cursor: pointer;
+        }
+        .manageWidgetIcon{
+            background-image: url('./img/manage_widget_icon.png');
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+        .small
+        {
+            font-size: 11px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-style: italic;
+        }
+        .widgetName
+        {
+            width: 140px;
+            height: 20px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    Mendix SDK
-    <script type="text/javascript">
-    WebFontConfig = {
-        google: { families: ['Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300:latin'] }
-    };
-    (function () {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-    })(); </script>
+    <form role="form">
+        <table class="options">
+            <tr>
+                <td class="heightLarge" valign="bottom">
+                    <div class="createWidgetIcon"></div>
+                </td>
+                <td class="heightLarge" valign="bottom">
+                    <div class="openWidgetIcon"></div>
+                </td>
+                <td class="heightLarge" valign="bottom">
+                    <div class="manageWidgetIcon"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="heightSmall">
+                    <b>Widget name</b><br>
+                    <div class="form-group"><input type="text" class="widgetName form-control" placeholder="Your new widget name..."></div>
+                </td>
+                <td class="heightSmall">
+                    &nbsp;
+                </td>
+                <td class="heightSmall">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="heightSmall">
+                    <br>
+                    <div class="createWidget"> </div>
+                    <br>
+                    <span class="small">Create a widget from the custom widget boilerplate.</span>
+                </td>
+                <td class="heightSmall">
+                    <br>
+                    <div class="openWidget"> </div>
+                    <br>
+                    <span class="small">Open a widget settings file.</span>
+                </td>
+                <td class="heightSmall">
+                    <br>
+                    <div class="manageWidget"> </div>
+                    <br>
+                    <span class="small">Create a new widget settings file.</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        $(document).ready(function(){
+
+            $('.openWidgetIcon').on('click', function(){
+                window.external.OpenWidget();
+            });
+            $('.openWidget').on('click', function(){
+                window.external.OpenWidget();
+            });
+
+            $('.createWidgetIcon').on('click', function(){
+                window.external.CreateWidget($('.widgetName').val());
+            });
+            $('.createWidget').on('click', function(){
+                window.external.CreateWidget($('.widgetName').val());
+            });
+
+            $('.manageWidgetIcon').on('click', function(){
+                window.external.ManageWidget();
+            });
+            $('.manageWidget').on('click', function(){
+                window.external.ManageWidget();
+            });
+
+        });
+    </script>
 </body>
 </html>

@@ -11,6 +11,15 @@ namespace MendixWidgets
 {
     public partial class FrmWidget : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, 
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         [DllImport("NetApi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern uint NetUseAdd(
              string UncServerName,
@@ -138,16 +147,12 @@ namespace MendixWidgets
                 txtDestination.Text = fldBrowseDestination.SelectedPath;
                 SaveSettings();
             }
-            btnCreateWidget.Focus();
+            btnCreateWidget2.Focus();
         }
 
         private void btnCreateWidget_Click(object sender, EventArgs e)
         {
-            CreateMPK();
-            if (Directory.Exists(this.txtDestination.Text + "\\deployment")) { 
-                CreateWidgetJS();
-                CreateWidgetCSS();
-            }
+
         }
 
         private void CreateWidgetJS()
@@ -567,14 +572,20 @@ namespace MendixWidgets
                         // Event handlers sometimes do not fire!
                     }
                     ReformatZip();
+                    MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is created.", "Widget created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception e)
                 {
                     txtChanges.Text += e.Message + "\r\n";
+                    MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is not created.\r\n" + e.Message, "Widget not created", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 txtChanges.Text += "Widget is created succesfully.\r\n";
 
+            }
+            else
+            {
+                MessageBox.Show("The widget source directory is not defined we cannot create the widget.", "Widget not created", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -626,9 +637,15 @@ namespace MendixWidgets
 
         }
 
-        private void btnCreateWidgetSrc_Click(object sender, EventArgs e)
+        private void btnCreateWidget2_Click(object sender, EventArgs e)
         {
-
+            CreateMPK();
+            if (Directory.Exists(this.txtDestination.Text + "\\deployment"))
+            {
+                CreateWidgetJS();
+                CreateWidgetCSS();
+            }
+            
         }
 
         #endregion
@@ -641,6 +658,18 @@ namespace MendixWidgets
         }
 
         #endregion
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+
+
 
 
     }

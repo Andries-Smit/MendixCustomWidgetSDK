@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSource = new System.Windows.Forms.TextBox();
             this.txtDestination = new System.Windows.Forms.TextBox();
-            this.btnCreateWidget = new System.Windows.Forms.Button();
             this.btnSetSource = new System.Windows.Forms.Button();
             this.btnSetDestination = new System.Windows.Forms.Button();
             this.fldBrowseSource = new System.Windows.Forms.FolderBrowserDialog();
@@ -43,8 +42,6 @@
             this.txtWidgetName = new System.Windows.Forms.TextBox();
             this.chkWatch = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.chkIgnoreDirectories = new System.Windows.Forms.CheckBox();
@@ -61,8 +58,8 @@
             this.txtWidgetJS = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtWidgetCSS = new System.Windows.Forms.TextBox();
+            this.btnCreateWidget2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.flsWatchDirectory)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flsWatchDestDirectory)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -74,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 124);
+            this.label1.Location = new System.Drawing.Point(17, 131);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
@@ -84,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 181);
+            this.label2.Location = new System.Drawing.Point(16, 188);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
@@ -93,7 +90,7 @@
             // 
             // txtSource
             // 
-            this.txtSource.Location = new System.Drawing.Point(20, 153);
+            this.txtSource.Location = new System.Drawing.Point(19, 160);
             this.txtSource.Margin = new System.Windows.Forms.Padding(2);
             this.txtSource.Name = "txtSource";
             this.txtSource.Size = new System.Drawing.Size(230, 20);
@@ -103,27 +100,16 @@
             // 
             // txtDestination
             // 
-            this.txtDestination.Location = new System.Drawing.Point(20, 206);
+            this.txtDestination.Location = new System.Drawing.Point(19, 213);
             this.txtDestination.Margin = new System.Windows.Forms.Padding(2);
             this.txtDestination.Name = "txtDestination";
             this.txtDestination.Size = new System.Drawing.Size(229, 20);
             this.txtDestination.TabIndex = 5;
             this.txtDestination.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDestination_KeyUp);
             // 
-            // btnCreateWidget
-            // 
-            this.btnCreateWidget.Location = new System.Drawing.Point(638, 8);
-            this.btnCreateWidget.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCreateWidget.Name = "btnCreateWidget";
-            this.btnCreateWidget.Size = new System.Drawing.Size(105, 24);
-            this.btnCreateWidget.TabIndex = 6;
-            this.btnCreateWidget.Text = "create widget";
-            this.btnCreateWidget.UseVisualStyleBackColor = true;
-            this.btnCreateWidget.Click += new System.EventHandler(this.btnCreateWidget_Click);
-            // 
             // btnSetSource
             // 
-            this.btnSetSource.Location = new System.Drawing.Point(253, 153);
+            this.btnSetSource.Location = new System.Drawing.Point(252, 160);
             this.btnSetSource.Margin = new System.Windows.Forms.Padding(2);
             this.btnSetSource.Name = "btnSetSource";
             this.btnSetSource.Size = new System.Drawing.Size(94, 20);
@@ -134,7 +120,7 @@
             // 
             // btnSetDestination
             // 
-            this.btnSetDestination.Location = new System.Drawing.Point(253, 206);
+            this.btnSetDestination.Location = new System.Drawing.Point(252, 213);
             this.btnSetDestination.Margin = new System.Windows.Forms.Padding(2);
             this.btnSetDestination.Name = "btnSetDestination";
             this.btnSetDestination.Size = new System.Drawing.Size(94, 20);
@@ -146,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 66);
+            this.label3.Location = new System.Drawing.Point(16, 73);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
@@ -160,7 +146,7 @@
             // 
             // txtWidgetName
             // 
-            this.txtWidgetName.Location = new System.Drawing.Point(20, 95);
+            this.txtWidgetName.Location = new System.Drawing.Point(19, 102);
             this.txtWidgetName.Margin = new System.Windows.Forms.Padding(2);
             this.txtWidgetName.Name = "txtWidgetName";
             this.txtWidgetName.Size = new System.Drawing.Size(228, 20);
@@ -171,7 +157,7 @@
             // chkWatch
             // 
             this.chkWatch.AutoSize = true;
-            this.chkWatch.Location = new System.Drawing.Point(18, 273);
+            this.chkWatch.Location = new System.Drawing.Point(17, 280);
             this.chkWatch.Margin = new System.Windows.Forms.Padding(2);
             this.chkWatch.Name = "chkWatch";
             this.chkWatch.Size = new System.Drawing.Size(324, 17);
@@ -185,34 +171,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(16, 234);
+            this.label4.Location = new System.Drawing.Point(15, 241);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "* just select the project folder...";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btnCreateWidget);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 424);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 42);
-            this.panel1.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 14);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Mendix Custom Widget SDK Tool";
             // 
             // openFileDialog
             // 
@@ -232,7 +196,7 @@
             this.chkIgnoreDirectories.AutoSize = true;
             this.chkIgnoreDirectories.Checked = true;
             this.chkIgnoreDirectories.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkIgnoreDirectories.Location = new System.Drawing.Point(18, 302);
+            this.chkIgnoreDirectories.Location = new System.Drawing.Point(17, 309);
             this.chkIgnoreDirectories.Margin = new System.Windows.Forms.Padding(2);
             this.chkIgnoreDirectories.Name = "chkIgnoreDirectories";
             this.chkIgnoreDirectories.Size = new System.Drawing.Size(110, 17);
@@ -242,7 +206,7 @@
             // 
             // txtIgnoreDirectories
             // 
-            this.txtIgnoreDirectories.Location = new System.Drawing.Point(148, 300);
+            this.txtIgnoreDirectories.Location = new System.Drawing.Point(147, 307);
             this.txtIgnoreDirectories.Margin = new System.Windows.Forms.Padding(2);
             this.txtIgnoreDirectories.Name = "txtIgnoreDirectories";
             this.txtIgnoreDirectories.Size = new System.Drawing.Size(200, 20);
@@ -253,7 +217,7 @@
             // 
             this.lblWidgetName.AutoSize = true;
             this.lblWidgetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWidgetName.Location = new System.Drawing.Point(14, 15);
+            this.lblWidgetName.Location = new System.Drawing.Point(13, 22);
             this.lblWidgetName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWidgetName.Name = "lblWidgetName";
             this.lblWidgetName.Size = new System.Drawing.Size(30, 26);
@@ -267,7 +231,7 @@
             // 
             // txtIgnoreFiles
             // 
-            this.txtIgnoreFiles.Location = new System.Drawing.Point(148, 330);
+            this.txtIgnoreFiles.Location = new System.Drawing.Point(147, 337);
             this.txtIgnoreFiles.Margin = new System.Windows.Forms.Padding(2);
             this.txtIgnoreFiles.Name = "txtIgnoreFiles";
             this.txtIgnoreFiles.Size = new System.Drawing.Size(200, 20);
@@ -277,7 +241,7 @@
             // chkIgnoreFiles
             // 
             this.chkIgnoreFiles.AutoSize = true;
-            this.chkIgnoreFiles.Location = new System.Drawing.Point(18, 332);
+            this.chkIgnoreFiles.Location = new System.Drawing.Point(17, 339);
             this.chkIgnoreFiles.Margin = new System.Windows.Forms.Padding(2);
             this.chkIgnoreFiles.Name = "chkIgnoreFiles";
             this.chkIgnoreFiles.Size = new System.Drawing.Size(126, 17);
@@ -288,12 +252,13 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(354, 66);
+            this.groupBox2.Location = new System.Drawing.Point(353, 73);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(390, 329);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compiled widget.js and widget.css";
+            this.groupBox2.Visible = false;
             // 
             // tabControl1
             // 
@@ -377,18 +342,33 @@
             this.txtWidgetCSS.TabIndex = 1;
             this.txtWidgetCSS.WordWrap = false;
             // 
+            // btnCreateWidget2
+            // 
+            this.btnCreateWidget2.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateWidget2.BackgroundImage = global::MendixWidgets.Properties.Resources.btnCreateWidget;
+            this.btnCreateWidget2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCreateWidget2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateWidget2.Location = new System.Drawing.Point(567, 408);
+            this.btnCreateWidget2.Name = "btnCreateWidget2";
+            this.btnCreateWidget2.Size = new System.Drawing.Size(176, 55);
+            this.btnCreateWidget2.TabIndex = 24;
+            this.btnCreateWidget2.Click += new System.EventHandler(this.btnCreateWidget2_Click);
+            // 
             // FrmWidget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::MendixWidgets.Properties.Resources.widget;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 466);
+            this.Controls.Add(this.btnCreateWidget2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtIgnoreFiles);
             this.Controls.Add(this.chkIgnoreFiles);
             this.Controls.Add(this.lblWidgetName);
             this.Controls.Add(this.txtIgnoreDirectories);
             this.Controls.Add(this.chkIgnoreDirectories);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chkWatch);
             this.Controls.Add(this.txtWidgetName);
@@ -408,8 +388,6 @@
             this.Text = "...";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flsWatchDirectory)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flsWatchDestDirectory)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -430,7 +408,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSource;
         private System.Windows.Forms.TextBox txtDestination;
-        private System.Windows.Forms.Button btnCreateWidget;
         private System.Windows.Forms.Button btnSetSource;
         private System.Windows.Forms.Button btnSetDestination;
         private System.Windows.Forms.FolderBrowserDialog fldBrowseSource;
@@ -440,8 +417,6 @@
         private System.Windows.Forms.TextBox txtWidgetName;
         private System.Windows.Forms.CheckBox chkWatch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.TextBox txtIgnoreDirectories;
@@ -458,5 +433,6 @@
         private System.Windows.Forms.TextBox txtWidgetCSS;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox txtChanges;
+        private System.Windows.Forms.Panel btnCreateWidget2;
     }
 }

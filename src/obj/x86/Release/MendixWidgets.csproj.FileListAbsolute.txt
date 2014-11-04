@@ -24,3 +24,4 @@ C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmWi
 C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.Main.resources
 C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.Properties.Resources.resources
 C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.csproj.GenerateResource.Cache
+C:\Projects\GitHub\MendixCustomWidgetSDK\src\obj\x86\Release\MendixWidgets.FrmMendixWidgetSDK.resources
