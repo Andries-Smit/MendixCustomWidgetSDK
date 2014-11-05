@@ -407,6 +407,9 @@ namespace MendixWidgets
             {
                 if (Directory.Exists(txtSource.Text))
                 {
+                    if(!File.Exists(txtDestination.Text + "\\widgets\\" + txtWidgetName.Text + ".mpk")){
+                        MessageBox.Show("First you must create a widget MPK file by pressing CREATE WIDGET.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                     if (Directory.Exists(txtDestination.Text + "\\deployment\\web\\widgets"))
                     {
                         flsWatchDirectory.Path = txtSource.Text;
@@ -428,6 +431,17 @@ namespace MendixWidgets
                         flsWatchDirectory.EnableRaisingEvents = true;
                         txtChanges.Text += "Started watching: " + txtSource.Text + ".\r\n";
                     }
+                    else
+                    {
+                        if (chkWatch.Checked)
+                        {
+                            MessageBox.Show("The widget is not deployed yet you need to startup the test project and run the project locally.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The source directory does not exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (Directory.Exists(txtSource.Text))
                 {
@@ -523,6 +537,11 @@ namespace MendixWidgets
             {
                 File.Delete(settingsFileName);
             }
+
+            // Source and destination.
+            txtSource.Text = txtSource.Text.Replace(@"\\", @"\");
+            txtDestination.Text = txtDestination.Text.Replace(@"\\", @"\");
+
             // Write settings.
             settings.WidgetName = txtWidgetName.Text;
             settings.SourcePath = txtSource.Text;

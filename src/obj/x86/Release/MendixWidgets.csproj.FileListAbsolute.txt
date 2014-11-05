@@ -31,7 +31,6 @@ C:\Projects\GitHub\MendixCustomWidgetSDK2\src\obj\x86\Release\MendixWidgets.pdb
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\bin\Release\file.ico
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\bin\Release\MendixWidgets.exe
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\bin\Release\MendixWidgets.pdb
-C:\Projects\GitHub\MendixCustomWidgetSDK2\src\obj\x86\Release\MendixWidgets.csprojResolveAssemblyReference.cache
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\obj\x86\Release\MendixWidgets.FrmLogin.resources
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\obj\x86\Release\MendixWidgets.FrmMendixWidgetSDK.resources
 C:\Projects\GitHub\MendixCustomWidgetSDK2\src\obj\x86\Release\MendixWidgets.FrmSplash.resources

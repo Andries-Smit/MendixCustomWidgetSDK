@@ -164,6 +164,10 @@ namespace MendixWidgets
         {
             newBtn();
         }
+        private string rewritePath(string path)
+        {
+            return path.Replace(@"\\", @"\");
+        }
         public void createWidget(string widgetName)
         {
             if (string.IsNullOrEmpty(widgetName))
@@ -176,60 +180,60 @@ namespace MendixWidgets
                 {
                     if (fldBrowseSource.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        if (Directory.Exists(fldBrowseSource.SelectedPath + @"\" + widgetName))
+                        if (Directory.Exists(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName)))
                         {
                             MessageBox.Show("There is already a directory with the widgetName '" + widgetName + "' in this directory.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
                             // Copy boilerplate files
-                            Directory.CreateDirectory(fldBrowseSource.SelectedPath + @"\" + widgetName);
-                            DirectoryCopy(Application.StartupPath + @"\boilerplate\", fldBrowseSource.SelectedPath + @"\" + widgetName, true);
+                            Directory.CreateDirectory(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName));
+                            DirectoryCopy(rewritePath(Application.StartupPath + @"\boilerplate\"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName), true);
 
                             // First move the content to a new directory with the widget name.
-                            Directory.Move(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\WidgetName", fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName);
+                            Directory.Move(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\WidgetName"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName));
                             
                             // Now rename widget source files
-                            string packageXml = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\package.xml");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\package.xml", packageXml.Replace("WidgetName", widgetName));
-                           
-                            File.Move(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\WidgetName.xml", fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml");
-                            string contentXml = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml", contentXml.Replace("WidgetName", widgetName));
+                            string packageXml = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\package.xml"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\package.xml"), packageXml.Replace("WidgetName", widgetName));
+
+                            File.Move(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\WidgetName.xml"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml"));
+                            string contentXml = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\" + widgetName + ".xml"), contentXml.Replace("WidgetName", widgetName));
                             
-                            File.Move(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\WidgetName.js", fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js");
-                            string contentJs = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js", contentJs.Replace("WidgetName", widgetName));
+                            File.Move(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\WidgetName.js"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js"));
+                            string contentJs = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\" + widgetName + @".js"), contentJs.Replace("WidgetName", widgetName));
 
-                            File.Move(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\WidgetName.css", fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css");
-                            string contentCss = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css", contentCss.Replace("WidgetName", widgetName));
+                            File.Move(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\WidgetName.css"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css"));
+                            string contentCss = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\ui\" + widgetName + @".css"), contentCss.Replace("WidgetName", widgetName));
 
-                            File.Move(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\WidgetName.html", fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html");
-                            string contentHtml = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html", contentHtml.Replace("WidgetName", widgetName));
+                            File.Move(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\WidgetName.html"), rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html"));
+                            string contentHtml = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\templates\" + widgetName + @".html"), contentHtml.Replace("WidgetName", widgetName));
 
                             // Alter jQuery
-                            string contentJQuery = File.ReadAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\lib\jquery.js");
-                            File.WriteAllText(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\lib\jquery.js", contentJQuery.Replace("WidgetName", widgetName));
+                            string contentJQuery = File.ReadAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\lib\jquery.js"));
+                            File.WriteAllText(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\" + widgetName + @"\widget\lib\jquery.js"), contentJQuery.Replace("WidgetName", widgetName));
 
 
                             // Creating settings file
-                            Directory.CreateDirectory(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings");
+                            Directory.CreateDirectory(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings"));
 
                             // Write settings.
                             clsMXWidgetSettings settings = new clsMXWidgetSettings();
                             settings.WidgetName = widgetName;
-                            settings.SourcePath = fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\";
-                            settings.DestinationPath = fldBrowseSource.SelectedPath + @"\" + widgetName + @"\test\";
+                            settings.SourcePath = rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\src\");
+                            settings.DestinationPath = rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\test\");
                             settings.Monitor = false;
                             XmlSerializer xmlSerializer = new XmlSerializer(settings.GetType());
-                            FileStream writeStream = new FileStream(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings\" + widgetName + ".mws", FileMode.Create);
+                            FileStream writeStream = new FileStream(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings\" + widgetName + ".mws"), FileMode.Create);
                             xmlSerializer.Serialize(writeStream, settings);
                             writeStream.Close();
 
                             // Open a new form
-                            FrmWidget form = new FrmWidget(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings\" + widgetName + ".mws");
+                            FrmWidget form = new FrmWidget(rewritePath(fldBrowseSource.SelectedPath + @"\" + widgetName + @"\settings\" + widgetName + ".mws"));
                             form.MdiParent = this;
                             form.Show();
                         }
