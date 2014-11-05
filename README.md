@@ -14,6 +14,10 @@ This will save allot of time while you are developing.
 This is public BETA and personal project of mine.
 Feel free to join in and help make this application better.
 
+## Version AppStoreWidgetBoilerplate.
+
+This version includes the version 2.0.0 boilerplate.
+
 ## Contributing
 
 For more information on contributing to this repository visit [Contributing to a GitHub repository](https://world.mendix.com/display/howto50/Contributing+to+a+GitHub+repository)!
