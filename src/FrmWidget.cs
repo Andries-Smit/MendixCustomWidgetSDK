@@ -340,7 +340,7 @@ namespace MendixWidgets
                 txtChanges.Text += "[SOURCE]: File " + e.OldName + " has been renamed to " + e.Name + ".\r\n";
                 string sourceFilename = txtDestination.Text + "\\deployment\\web\\widgets\\" + e.OldName;
                 string destinationFilename = txtDestination.Text + "\\deployment\\web\\widgets\\" + e.Name;
-                CreateMPK();
+                CreateMPK(false);
                 if (Directory.Exists(txtDestination.Text + "\\deployment\\web\\widgets\\" + txtWidgetName.Text))
                 {
                     RenameSourceDest(sourceFilename, destinationFilename);
@@ -361,7 +361,7 @@ namespace MendixWidgets
             {
                 txtChanges.Text += "[SOURCE]: File " + e.Name + " has been deleted.\r\n";
                 string destinationFilename = txtDestination.Text + "\\deployment\\web\\widgets\\" + e.Name;
-                CreateMPK();
+                CreateMPK(false);
                 if (Directory.Exists(txtDestination.Text + "\\deployment\\web\\widgets\\" + txtWidgetName.Text))
                 {
                     if (Directory.Exists(destinationFilename))
@@ -384,7 +384,7 @@ namespace MendixWidgets
             if (chkWatch.Checked && isDirectoryIgnored(e.Name) == false && isFileIgnored(e.Name) == false)
             {
                 txtChanges.Text += "[SOURCE]: File " + e.Name + " has been changed / modified.\r\n";
-                CreateMPK();
+                CreateMPK(false);
 
                 // When the directory "...\deployment\web\widgets\[widgetname]" exists alter files on deployment.
                 string sourceFilename = e.FullPath;
@@ -543,7 +543,7 @@ namespace MendixWidgets
             }
         }
 
-        private void CreateMPK()
+        private void CreateMPK(bool showMessageBox)
         {
             if (txtSource.Text != string.Empty && txtDestination.Text != string.Empty)
             {
@@ -572,12 +572,19 @@ namespace MendixWidgets
                         // Event handlers sometimes do not fire!
                     }
                     ReformatZip();
-                    MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is created.", "Widget created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (showMessageBox)
+                    {
+                        MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is created.", "Widget created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 catch (Exception e)
                 {
                     txtChanges.Text += e.Message + "\r\n";
-                    MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is not created.\r\n" + e.Message, "Widget not created", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (showMessageBox)
+                    {
+                        MessageBox.Show("The widget with name '" + txtWidgetName.Text + "' is not created.\r\n" + e.Message, "Widget not created", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
                 txtChanges.Text += "Widget is created succesfully.\r\n";
@@ -639,7 +646,7 @@ namespace MendixWidgets
 
         private void btnCreateWidget2_Click(object sender, EventArgs e)
         {
-            CreateMPK();
+            CreateMPK(true);
             if (Directory.Exists(this.txtDestination.Text + "\\deployment"))
             {
                 CreateWidgetJS();
@@ -658,19 +665,6 @@ namespace MendixWidgets
         }
 
         #endregion
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-
-
-
 
     }
 }

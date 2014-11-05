@@ -123,7 +123,7 @@
 
                     // Load data
                     this._loadData();
-  
+
                     // Subscribe to object updates.
                     this._handle = mx.data.subscribe({
                         guid: this._contextObj.getGuid(),
