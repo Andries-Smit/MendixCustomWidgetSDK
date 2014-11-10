@@ -162,11 +162,11 @@
             },
 
             enable: function () {
-                //TODO, what will happen if the widget is suspended (not visible).
+                //TODO, what will happen if the widget is enabled (editable).
             },
 
             disable: function () {
-                //TODO, what will happen if the widget is resumed (set visible).
+                //TODO, what will happen if the widget is disabled (not editable).
             },
 
             unintialize: function () {
